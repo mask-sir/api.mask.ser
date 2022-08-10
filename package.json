@@ -1,7 +1,7 @@
 {
-  "name": "rest-api-alpis",
+  "name": "api-mask-ser",
   "version": "2.0.0",
-  "description": "make by alip free rest api",
+  "description": "make by mask ser free rest api",
   "main": "index.js",
   "engines": {
     "node": "16.x"
@@ -15,19 +15,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlipBot/Api-Alpis.git"
+    "url": "git+https://github.com/mask-sir/api.mask.sir.git"
   },
   "keywords": [
     "restapi",
     "bot",
     "whatsaap"
   ],
-  "author": "AlipBot",
+  "author": "MASK SER",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AlipBot/Api-Alpis/issues"
+    "url": "https://github.com/mask-sir/api.mask.sir/issues"
   },
-  "homepage": "https://github.com/AlipBot/Api-Alpis#readme",
+  "homepage": "https://github.com/mask-sir/api.mask.sir#readme",
   "dependencies": {
     "axios": "^0.27.2",
     "bitly": "^7.1.2",
