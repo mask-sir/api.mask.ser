@@ -21,10 +21,10 @@ var router = express.Router()
 
 
 //―――――――――――――――――――――――――――――――――――――――――― ┏  Info  ┓ ―――――――――――――――――――――――――――――――――――――――――― \\
-//  >Creator Alip MY
-//  >Jangan Jual Sc Dan Buang Tulisan ini
-//  >Guna Dengan Bijak
-//  >Kalau mahu reupload jangan lupa creadit Ya :)
+//  >Creator Mask ser
+//  >Don't Sell Sc And Discard This Post
+// >Use Wisely
+// >If you want to reupload, don't forget to credit Yes :)
 //
 //
 //  >>>>>Menu<<<<<
@@ -48,7 +48,7 @@ var router = express.Router()
 
 router.get('/dowloader/fbdown', async (req, res, next) => {
 	var url = req.query.url
-	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})  
+	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter url parameters"})  
 
 alip.fbDown2(url)
 .then(data => {
@@ -66,7 +66,7 @@ alip.fbDown2(url)
 
 router.get('/dowloader/twitter', async (req, res, next) => {
 	var url = req.query.url
-	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})   
+	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter url parameters"})   
 	
 alip.twitter(url)
 .then(data => {
@@ -85,7 +85,7 @@ res.json(loghandler.error)
 
 router.get('/dowloader/tikok', async (req, res, next) => {
 	var url = req.query.url
-	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})  
+	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter url parameters"})  
 
 alip.musically(url)
 .then(data => {
@@ -105,7 +105,7 @@ alip.musically(url)
 
 router.get('/dowloader/igstory', async (req, res, next) => {
 	var username = req.query.username
-	if (!username ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter username"})   
+	if (!username ) return res.json({ status : false, creator : `${creator}`, message : "[!] Enter username parameters"})   
 	alip.igstory(username)
 	.then(data => {
 		if (!data ) return res.json(loghandler.notfound)
@@ -123,7 +123,7 @@ router.get('/dowloader/igstory', async (req, res, next) => {
 
 router.get('/dowloader/igreels', async (req, res, next) => {
 	var url = req.query.url
-	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})   
+	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter url parameters"})   
 
 	alip.igdl(url)
 	.then(data => {
@@ -143,7 +143,7 @@ router.get('/dowloader/igreels', async (req, res, next) => {
 
 router.get('/dowloader/igdowloader', async (req, res, next) => {
 	var url = req.query.url
-	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})   
+	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter url parameters"})   
 	
 	alip.igdl(url)
 	.then(data => {
@@ -164,7 +164,7 @@ router.get('/dowloader/igdowloader', async (req, res, next) => {
 
 router.get('/dowloader/yt', async (req, res, next) => {
 	var url = req.query.url
-	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"}) 
+	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter url parameters"}) 
 
 	let { yta, ytv } = require('../lib/y2mate')
 	let mp3 = await yta(url, '320kbps')
@@ -186,7 +186,7 @@ router.get('/dowloader/yt', async (req, res, next) => {
 
 router.get('/dowloader/soundcloud', async (req, res, next) => {
 	var url = req.query.url
-	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})   
+	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter url parameters"})   
 	
 	alip.soundcloud(url)
 	.then(data => {
@@ -206,7 +206,7 @@ router.get('/dowloader/soundcloud', async (req, res, next) => {
 
 router.get('/dowloader/telesticker', async (req, res, next) => {
 	var url = req.query.url
-	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})   
+	if (!url ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter url parameters"})   
 	if (!url.match(/(https:\/\/t.me\/addstickers\/)/gi)) return res.json(loghandler.noturl)
 	alip.telesticker(url)
 	.then(data => {
@@ -226,7 +226,7 @@ router.get('/dowloader/telesticker', async (req, res, next) => {
 
 router.get('/textpro/pencil', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text "})   
 	alip.textpro("https://textpro.me/create-a-sketch-text-effect-online-1044.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -240,7 +240,7 @@ router.get('/textpro/pencil', async (req, res, next) => {
 
 router.get('/textpro/glitch', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text "})   
 	alip.textpro("https://textpro.me/create-impressive-glitch-text-effects-online-1027.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -254,7 +254,7 @@ router.get('/textpro/glitch', async (req, res, next) => {
 
 router.get('/textpro/blackpink', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text "})   
 	alip.textpro("https://textpro.me/create-blackpink-logo-style-online-1001.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -268,7 +268,7 @@ router.get('/textpro/blackpink', async (req, res, next) => {
 
 router.get('/textpro/berry', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text "})   
 	alip.textpro("https://textpro.me/create-berry-text-effect-online-free-1033.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -282,7 +282,7 @@ router.get('/textpro/berry', async (req, res, next) => {
 
 router.get('/textpro/neon', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text "})   
 	alip.textpro("https://textpro.me/neon-light-text-effect-online-882.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -297,7 +297,7 @@ router.get('/textpro/neon', async (req, res, next) => {
 
 router.get('/textpro/logobear', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text "})   
 	alip.textpro("https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -311,7 +311,7 @@ router.get('/textpro/logobear', async (req, res, next) => {
 
 router.get('/textpro/3dchristmas', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text "})   
 	alip.textpro("https://textpro.me/3d-christmas-text-effect-by-name-1055.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -325,7 +325,7 @@ router.get('/textpro/3dchristmas', async (req, res, next) => {
 
 router.get('/textpro/thunder', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text "})   
 	alip.textpro("https://textpro.me/online-thunder-text-effect-generator-1031.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -339,7 +339,7 @@ router.get('/textpro/thunder', async (req, res, next) => {
 
 router.get('/textpro/3dboxtext', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text "})   
 	alip.textpro("https://textpro.me/3d-box-text-effect-online-880.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -354,8 +354,8 @@ router.get('/textpro/3dboxtext', async (req, res, next) => {
 router.get('/textpro/glitch2', async (req, res, next) => {
 	var text1 = req.query.text
 	var text2 = req.query.text2
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
-	if (!text2 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text2"}) 
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text "})   
+	if (!text2 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text2"}) 
 	alip.textpro("https://textpro.me/create-a-glitch-text-effect-online-free-1026.html", [text1,text2])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -369,8 +369,8 @@ router.get('/textpro/glitch2', async (req, res, next) => {
 router.get('/textpro/glitchtiktok', async (req, res, next) => {
 	var text1 = req.query.text
 	var text2 = req.query.text2
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
-	if (!text2 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text2"}) 
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text "})   
+	if (!text2 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text2"}) 
 	alip.textpro("https://textpro.me/create-glitch-text-effect-style-tik-tok-983.html", [text1,text2])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -384,8 +384,8 @@ router.get('/textpro/glitchtiktok', async (req, res, next) => {
 router.get('/textpro/video-game-classic', async (req, res, next) => {
 	var text1 = req.query.text
 	var text2 = req.query.text2
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
-	if (!text2 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text2"}) 
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
+	if (!text2 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text2"}) 
 	alip.textpro("https://textpro.me/video-game-classic-8-bit-text-effect-1037.html", [text1,text2])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -399,8 +399,8 @@ router.get('/textpro/video-game-classic', async (req, res, next) => {
 router.get('/textpro/marvel-studios', async (req, res, next) => {
 	var text1 = req.query.text
 	var text2 = req.query.text2
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
-	if (!text2 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text2"}) 
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
+	if (!text2 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text2"}) 
 	alip.textpro("https://textpro.me/create-logo-style-marvel-studios-online-971.html", [text1,text2])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -414,8 +414,8 @@ router.get('/textpro/marvel-studios', async (req, res, next) => {
 router.get('/textpro/ninja-logo', async (req, res, next) => {
 	var text1 = req.query.text
 	var text2 = req.query.text2
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
-	if (!text2 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text2"}) 
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
+	if (!text2 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text2"}) 
 	alip.textpro("https://textpro.me/create-ninja-logo-online-935.html", [text1,text2])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -428,7 +428,7 @@ router.get('/textpro/ninja-logo', async (req, res, next) => {
 
 router.get('/textpro/green-horror', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.textpro("https://textpro.me/create-green-horror-style-text-effect-online-1036.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -441,7 +441,7 @@ router.get('/textpro/green-horror', async (req, res, next) => {
 
 router.get('/textpro/magma', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.textpro("https://textpro.me/create-a-magma-hot-text-effect-online-1030.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -454,7 +454,7 @@ router.get('/textpro/magma', async (req, res, next) => {
 
 router.get('/textpro/3d-neon-light', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.textpro("https://textpro.me/create-3d-neon-light-text-effect-online-1028.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -467,7 +467,7 @@ router.get('/textpro/3d-neon-light', async (req, res, next) => {
 
 router.get('/textpro/3d-orange-juice', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.textpro("https://textpro.me/create-a-3d-orange-juice-text-effect-online-1084.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -480,7 +480,7 @@ router.get('/textpro/3d-orange-juice', async (req, res, next) => {
 
 router.get('/textpro/chocolate-cake', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.textpro("https://textpro.me/chocolate-cake-text-effect-890.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -493,7 +493,7 @@ router.get('/textpro/chocolate-cake', async (req, res, next) => {
 
 router.get('/textpro/strawberry', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.textpro("https://textpro.me/strawberry-text-effect-online-889.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -509,7 +509,7 @@ router.get('/textpro/strawberry', async (req, res, next) => {
 
 router.get('/photooxy/flaming', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.photooxy("https://photooxy.com/logo-and-text-effects/realistic-flaming-text-effect-online-197.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -523,7 +523,7 @@ router.get('/photooxy/flaming', async (req, res, next) => {
 
 router.get('/photooxy/shadow-sky', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.photooxy("https://photooxy.com/logo-and-text-effects/shadow-text-effect-in-the-sky-394.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -537,7 +537,7 @@ router.get('/photooxy/shadow-sky', async (req, res, next) => {
 
 router.get('/photooxy/metallic', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.photooxy("https://photooxy.com/other-design/create-metallic-text-glow-online-188.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -551,7 +551,7 @@ router.get('/photooxy/metallic', async (req, res, next) => {
 
 router.get('/photooxy/naruto', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.photooxy("https://photooxy.com/manga-and-anime/make-naruto-banner-online-free-378.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -565,7 +565,7 @@ router.get('/photooxy/naruto', async (req, res, next) => {
 
 router.get('/photooxy/pubg', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	var text2 = req.query.text2
 	if (!text2 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text2"})  
 	alip.photooxy("https://photooxy.com/battlegrounds/make-wallpaper-battlegrounds-logo-text-146.html", [text1,text2])
@@ -580,7 +580,7 @@ router.get('/photooxy/pubg', async (req, res, next) => {
 
 router.get('/photooxy/under-grass', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.photooxy("https://photooxy.com/logo-and-text-effects/make-quotes-under-grass-376.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -593,7 +593,7 @@ router.get('/photooxy/under-grass', async (req, res, next) => {
 
 router.get('/photooxy/harry-potter', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.photooxy("https://photooxy.com/logo-and-text-effects/create-harry-potter-text-on-horror-background-178.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -606,7 +606,7 @@ router.get('/photooxy/harry-potter', async (req, res, next) => {
 
 router.get('/photooxy/flower-typography', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.photooxy("https://photooxy.com/art-effects/flower-typography-text-effect-164.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -619,7 +619,7 @@ router.get('/photooxy/flower-typography', async (req, res, next) => {
 
 router.get('/photooxy/picture-of-love', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.photooxy("https://photooxy.com/logo-and-text-effects/create-a-picture-of-love-message-377.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -632,7 +632,7 @@ router.get('/photooxy/picture-of-love', async (req, res, next) => {
 
 router.get('/photooxy/coffee-cup', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.photooxy("https://photooxy.com/logo-and-text-effects/put-any-text-in-to-coffee-cup-371.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -645,7 +645,7 @@ router.get('/photooxy/coffee-cup', async (req, res, next) => {
 
 router.get('/photooxy/butterfly', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.photooxy("https://photooxy.com/logo-and-text-effects/butterfly-text-with-reflection-effect-183.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -658,7 +658,7 @@ router.get('/photooxy/butterfly', async (req, res, next) => {
 
 router.get('/photooxy/night-sky', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.photooxy("https://photooxy.com/logo-and-text-effects/write-stars-text-on-the-night-sky-200.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -672,7 +672,7 @@ router.get('/photooxy/night-sky', async (req, res, next) => {
 
 router.get('/photooxy/carved-wood', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.photooxy("https://photooxy.com/logo-and-text-effects/carved-wood-effect-online-171.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -686,7 +686,7 @@ router.get('/photooxy/carved-wood', async (req, res, next) => {
 
 router.get('/photooxy/illuminated-metallic', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.photooxy("https://photooxy.com/logo-and-text-effects/illuminated-metallic-effect-177.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -699,7 +699,7 @@ router.get('/photooxy/illuminated-metallic', async (req, res, next) => {
 
 router.get('/photooxy/sweet-candy', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.photooxy("https://photooxy.com/logo-and-text-effects/sweet-andy-text-online-168.html", [text1])
 .then((data) =>{ 
 	res.set({'Content-Type': 'image/png'})
@@ -717,8 +717,8 @@ router.get('/photooxy/sweet-candy', async (req, res, next) => {
 router.get('/soundoftext', async (req, res, next) => {
 	var text1 = req.query.text
 	var lan = req.query.lang
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
-	if (!lan ) return res.json({ status : false, creator : `${creator}`, message : "[!] sila letak format lang dengan betul cek web site https://soundoftext.com/docs untuk lihat code lang"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text})   
+	if (!lan ) return res.json({ status : false, creator : `${creator}`, message : "[!] please put the format correctly check the website https://soundoftext.com/docs to see code lang"})   
 	
 	
 textto.sounds.create({ text: text1, voice: lan })
@@ -742,7 +742,7 @@ textto.sounds.create({ text: text1, voice: lan })
 
 router.get('/search/linkgroupwa', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.linkwa(text1)
 .then((data) =>{ 
 	if (!data[0] ) return res.json(loghandler.notfound)
@@ -760,7 +760,7 @@ router.get('/search/linkgroupwa', async (req, res, next) => {
 
 router.get('/search/pinterest', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.pinterest(text1)
 .then((data) =>{ 
 	if (!data[0] ) return res.json(loghandler.notfound)
@@ -779,7 +779,7 @@ router.get('/search/pinterest', async (req, res, next) => {
 
 router.get('/search/ringtone', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.ringtone(text1)
 .then((data) =>{ 
 	if (!data ) return res.json(loghandler.notfound)
@@ -798,7 +798,7 @@ router.get('/search/ringtone', async (req, res, next) => {
 
 router.get('/search/wikimedia', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.wikimedia(text1)
 .then((data) =>{ 
 	if (!data[0] ) return res.json(loghandler.notfound)
@@ -817,7 +817,7 @@ router.get('/search/wikimedia', async (req, res, next) => {
 
 router.get('/search/wallpaper', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.wallpaper(text1)
 .then((data) =>{ 
 	if (!data[0] ) return res.json(loghandler.notfound)
@@ -835,7 +835,7 @@ router.get('/search/wallpaper', async (req, res, next) => {
 
 router.get('/search/google', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 
 	googleIt({'query': text1}).then(results => {
 		if (!results[0] ) return res.json(loghandler.notfound)
@@ -853,7 +853,7 @@ router.get('/search/google', async (req, res, next) => {
 
 router.get('/search/googleimage', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 
 	var gis = require('g-i-s')
 gis(text1, logResults)
@@ -877,7 +877,7 @@ function logResults(error, results) {
 
 router.get('/search/ytplay', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"}) 
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"}) 
 
 	let yts = require("yt-search")
 	let search = await yts(text1)
@@ -912,7 +912,7 @@ router.get('/search/ytplay', async (req, res, next) => {
 
 router.get('/search/sticker', async (req, res, next) => {
 	var text1 = req.query.text
-	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter text"})   
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter the text"})   
 	alip.stickersearch(text1)
 	.then(data => {
 		if (!data ) return res.json(loghandler.notfound)
@@ -927,7 +927,7 @@ router.get('/search/sticker', async (req, res, next) => {
 })
 })
 
-//―――――――――――――――――――――――――――――――――――――――――― ┏  Random Gambar ┓ ―――――――――――――――――――――――――――――――――――――――――― \\
+//―――――――――――――――――――――――――――――――――――――――――― ┏  Random Picture ┓ ―――――――――――――――――――――――――――――――――――――――――― \\
 
 
 router.get('/randomgambar/couplepp', async (req, res, next) => {
@@ -1078,9 +1078,9 @@ router.get('/game/tembakkimia', async (req, res, next) => {
 
 router.get('/maker/circle', async (req, res) => {
 	var text = req.query.url
-	if (!text ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})
+	if (!text ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter url parameters"})
 	var img = await isImageURL(text)
-	if ( !img ) return res.json({ status : false, creator : 'Alip', message : "[!] cek kembali url image"}) 
+	if ( !img ) return res.json({ status : false, creator : 'Alip', message : "[!] recheck image url"}) 
 
 	const hasil =  await Canvacord.Canvas.circle(text);
 	res.set({'Content-Type': 'image/png'})
@@ -1091,9 +1091,9 @@ router.get('/maker/circle', async (req, res) => {
 
 router.get('/maker/beautiful', async (req, res) => {
 	var text = req.query.url
-	if (!text ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})
+	if (!text ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter url parameters"})
 	var img = await isImageURL(text)
-	if ( !img ) return res.json({ status : false, creator : 'Alip', message : "[!] cek kembali url image"}) 
+	if ( !img ) return res.json({ status : false, creator : 'Alip', message : "[!] recheck image url"}) 
 
 	const hasil =  await Canvacord.Canvas.beautiful(text);
 	res.set({'Content-Type': 'image/png'})
@@ -1104,9 +1104,9 @@ router.get('/maker/beautiful', async (req, res) => {
 
 router.get('/maker/blur', async (req, res) => {
 	var text = req.query.url
-	if (!text ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})
+	if (!text ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter url parameters"})
 	var img = await isImageURL(text)
-	if ( !img ) return res.json({ status : false, creator : 'Alip', message : "[!] cek kembali url image"}) 
+	if ( !img ) return res.json({ status : false, creator : 'Alip', message : "[!] recheck image url"}) 
 
 	const hasil =  await Canvacord.Canvas.blur(text)
 	res.set({'Content-Type': 'image/png'})
@@ -1118,13 +1118,13 @@ router.get('/maker/blur', async (req, res) => {
 router.get('/maker/darkness', async (req, res) => {
 	var text = req.query.url
 	var no = req.query.no
-	if (!text ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})
-	if (!no ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter no"})
+	if (!text ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter url parameters"})
+	if (!no ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter no"})
 
 	var img = await isImageURL(text)
 	var n = isNumber(no)
-	if ( !img ) return res.json({ status : false, creator : 'Alip', message : "[!] cek kembali url image"}) 
-	if ( !n ) return res.json({ status : false, creator : 'Alip', message : "[!] parameter no nombor sahaja"}) 
+	if ( !img ) return res.json({ status : false, creator : 'Alip', message : "[!] recheck image url"}) 
+	if ( !n ) return res.json({ status : false, creator : 'Alip', message : "[!] parameter no number only"}) 
 
 
 	const hasil =  await Canvacord.Canvas.darkness(text,shortText(no, 3))
@@ -1135,9 +1135,9 @@ router.get('/maker/darkness', async (req, res) => {
 
 router.get('/maker/facepalm', async (req, res) => {
 	var text = req.query.url
-	if (!text ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})
+	if (!text ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter url parameters"})
 	var img = await isImageURL(text)
-	if ( !img ) return res.json({ status : false, creator : 'Alip', message : "[!] cek kembali url image"}) 
+	if ( !img ) return res.json({ status : false, creator : 'Alip', message : "[!] recheck image url"}) 
 
 	const hasil =  await Canvacord.Canvas.facepalm(text)
 	res.set({'Content-Type': 'image/png'})
@@ -1147,7 +1147,7 @@ router.get('/maker/facepalm', async (req, res) => {
 
 router.get('/maker/invert', async (req, res) => {
 	var text = req.query.url
-	if (!text ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})
+	if (!text ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter url parameters"})
 	var img = await isImageURL(text)
 	if ( !img ) return res.json({ status : false, creator : 'Alip', message : "[!] cek kembali url image"}) 
 
@@ -1160,13 +1160,13 @@ router.get('/maker/invert', async (req, res) => {
 router.get('/maker/pixelate', async (req, res) => {
 	var text = req.query.url
 	var no = req.query.no
-	if (!text ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})
-	if (!no ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter no"})
+	if (!text ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter url parameters"})
+	if (!no ) return res.json({ status : false, creator : `${creator}`, message : "[!] input parameter no"})
 
 	var img = await isImageURL(text)
 	var n = isNumber(no)
-	if ( !img ) return res.json({ status : false, creator : 'Alip', message : "[!] cek kembali url image"}) 
-	if ( !n ) return res.json({ status : false, creator : 'Alip', message : "[!] parameter no nombor sahaja"}) 
+	if ( !img ) return res.json({ status : false, creator : 'Alip', message : "[!] recheck image url"}) 
+	if ( !n ) return res.json({ status : false, creator : 'Alip', message : "[!] parameter no number only"}) 
 
 
 	const hasil =  await Canvacord.Canvas.pixelate(text,convertStringToNumber(no))
@@ -1178,9 +1178,9 @@ router.get('/maker/pixelate', async (req, res) => {
 
 router.get('/maker/rainbow', async (req, res) => {
 	var text = req.query.url
-	if (!text ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})
+	if (!text ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter url parameters"})
 	var img = await isImageURL(text)
-	if ( !img ) return res.json({ status : false, creator : 'Alip', message : "[!] cek kembali url image"}) 
+	if ( !img ) return res.json({ status : false, creator : 'Alip', message : "[!] recheck image url"}) 
 
 	const hasil =  await Canvacord.Canvas.rainbow(text)
 	res.set({'Content-Type': 'image/png'})
@@ -1193,9 +1193,9 @@ router.get('/maker/resize', async (req, res) => {
 	var width = req.query.width
 	var height = req.query.height
 
-	if (!text ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter url"})
-	if (!width ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter width"})
-	if (!height ) return res.json({ status : false, creator : `${creator}`, message : "[!] masukan parameter height"})
+	if (!text ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter url parameters"})
+	if (!width ) return res.json({ status : false, creator : `${creator}`, message : "[!] enter parameter width"})
+	if (!height ) return res.json({ status : false, creator : `${creator}`, message : "[!] Enter height parameter"})
 
 	let w = width
 	let h = height
@@ -1205,9 +1205,9 @@ router.get('/maker/resize', async (req, res) => {
 	var img = await isImageURL(text)
 	var wid = isNumber(width)
 	var hei = isNumber(height)
-	if ( !img ) return res.json({ status : false, creator : 'Alip', message : "[!] cek kembali url image"}) 
-	if ( !wid ) return res.json({ status : false, creator : 'Alip', message : "[!] parameter width nombor sahaja"}) 
-	if ( !hei ) return res.json({ status : false, creator : 'Alip', message : "[!] parameter height nombor sahaja"}) 
+	if ( !img ) return res.json({ status : false, creator : 'Alip', message : "[!] recheck image url"}) 
+	if ( !wid ) return res.json({ status : false, creator : 'Alip', message : "[!] parameter width number only"}) 
+	if ( !hei ) return res.json({ status : false, creator : 'Alip', message : "[!] the height parameter is a number only"}) 
 
 	const hasil =  await Canvacord.Canvas.resize(text, convertStringToNumber(w),  convertStringToNumber(h))
 	res.set({'Content-Type': 'image/png'})
