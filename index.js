@@ -3,12 +3,12 @@
 //   Credit : AlipBot
 //   
 //   Note 
-//   Jangan Jual SC ini ,
-//   Jangan Buang Text ini,
-//   Siapa Mahu Upload Jangan Lupa Credit :),
-//   Siapa Tidak Letak Credit Akan Ambil Tindakan
+//   Do not sell this SC,
+// Do not remove this text,
+// Who Wants To Upload Don't Forget Credit :),
+// Those Who Don't Put Credit Will Take Action
 //   
-//_______________________ ┏ Make By AlipBot ┓ _______________________\\
+//_______________________ ┏ MADED BY MASK SER ┓ _______________________\\
 
 const express = require('express'); 
 const app = express();
@@ -57,7 +57,7 @@ app.listen(PORT, () => {
 	██╔══██╗██╔══╝  ╚════██║   ██║   ██╔══██║██╔═══╝ ██║
 	██║  ██║███████╗███████║   ██║   ██║  ██║██║     ██║
 	╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝     ╚═╝
-			                              Make by Alip 
+			                              Maded by mask ser 
 								 
  Server running on http://localhost:` + PORT)
 console.log(`Hello ${creator}`)
