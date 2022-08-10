@@ -1946,5 +1946,20 @@ router.get('/islamic/tafsirsurah', async (req, res, next) => {
 
 })
 })
+//RANDOM
+router.get('/randomgambar/statusVideo', async (req, res, next) => {
+
+	let sts = await fetchJson('https://raw.githubusercontent.com/mask-sir/api.mask-ser/main/Sts.json')
+	let random = sts[Math.floor(Math.random() * sts.length)]
+
+	res.json({
+	status: true,
+	creator: `${creator}`,
+		result: {
+			video: random,
+					}
+	})
+
+})
 
 module.exports = router
