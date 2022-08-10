@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mask-sir/api.mask.sir.git"
+    "url": "git+https://github.com/mask-sir/api.mask.ser.git"
   },
   "keywords": [
     "restapi",
@@ -25,9 +25,9 @@
   "author": "MASK SER",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mask-sir/api.mask.sir/issues"
+    "url": "https://github.com/mask-sir/api.mask.ser/issues"
   },
-  "homepage": "https://github.com/mask-sir/api.mask.sir#readme",
+  "homepage": "https://github.com/mask-sir/api.mask.ser#readme",
   "dependencies": {
     "axios": "^0.27.2",
     "bitly": "^7.1.2",
