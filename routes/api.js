@@ -1947,6 +1947,7 @@ router.get('/islamic/tafsirsurah', async (req, res, next) => {
 })
 })
 //RANDOM
+/*
 router.get('/randomgambar/statusVideo', async (req, res, next) => {
 
 	let sts = await fetchJson('https://raw.githubusercontent.com/mask-sir/api.mask-ser/main/Sts.json')
@@ -1961,5 +1962,6 @@ router.get('/randomgambar/statusVideo', async (req, res, next) => {
 	})
 
 })
+*/
 
 module.exports = router
