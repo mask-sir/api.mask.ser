@@ -972,7 +972,9 @@ router.get('/randomvideo/msts', async (req, res, next) => {
 	res.json({
 	status: true,
 	creator: `${creator}`,
+                result: {
     video: `${random}`
+          }
 })
 
 })
