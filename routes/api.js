@@ -927,6 +927,20 @@ router.get('/search/sticker', async (req, res, next) => {
 	 res.json(loghandler.error)
 })
 })
+router.Post('/javascript-obfuscator', function(req, res) {
+let code = req.body.code
+let value = req.body.value
+try {
+console.log('receiving data ...');
+if (!code) return res.json({status: false, creator: `${creator}`, message: "No Code Given"})
+var JavaScriptObfuscator = require('javascript-obfuscator');
+var obfuscationResult = JavaScriptObfuscator.obfuscate(code,value);
+res.json({status: 200, creator: `${creator}`, code: `${JSON.parse(obfuscationResult.getObfuscatedCode())}`})
+} catch (err) {
+console.log(err)
+res.json({status: 404, creator: `${creator}`, code: 'error in code'})
+}
+})
 
 //―――――――――――――――――――――――――――――――――――――――――― ┏  Random Gambar ┓ ―――――――――――――――――――――――――――――――――――――――――― \\
 
