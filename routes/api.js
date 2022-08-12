@@ -927,7 +927,7 @@ router.get('/search/sticker', async (req, res, next) => {
 	 res.json(loghandler.error)
 })
 })
-router.Post('/javascript-obfuscator', function(req, res) {
+router.post('/javascript-obfuscator', function(req, res) {
 let code = req.body.code
 let value = req.body.value
 try {
