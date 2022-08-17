@@ -992,6 +992,21 @@ router.get('/randomvideo/msts', async (req, res, next) => {
 })
 
 })
+router.get('/fun/tintu', async (req, res, next) => {
+
+	let sts = await fetchJson('https://raw.githubusercontent.com/mask-sir/api.mask-ser/main/Mask/Tintu.json')
+	let random = sts.result[Math.floor(Math.random() * sts.result.length)]
+
+	res.json({
+	status: true,
+	creator: `${creator}`,
+                result: {
+    joke: `${random}`
+          }
+})
+
+})
+
 router.get('/randomvideo/asupan', async (req, res, next) => {
 
 	let sts = await fetchJson('https://raw.githubusercontent.com/mask-sir/api.mask-ser/main/Sts.json')
