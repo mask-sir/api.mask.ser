@@ -59,6 +59,7 @@
     "qs": "^6.10.3",
     "secure": "^0.0.1",
     "serve-favicon": "^2.5.0",
+    "scraper-x0" : "^1.0.3",
     "soundoftext-js": "^1.0.2",
     "ssl-express-www": "^3.0.8",
     "tinyurl": "^1.1.7",
