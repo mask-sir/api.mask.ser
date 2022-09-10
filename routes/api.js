@@ -739,6 +739,23 @@ textto.sounds.create({ text: text1, voice: lan })
 
 //―――――――――――――――――――――――――――――――――――――――――― ┏  Search  ┓ ―――――――――――――――――――――――――――――――――――――――――― \\
 
+router.get('/search/playstore', async (req, res, next) => {
+	var text1 = req.query.text
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] Need search word"})   
+const scrape = require('scraper-x0')
+const scraper =  new scrape("nxrj@123456");
+scraper.playstore(text1).then((c)=>{
+			res.json({
+				status: true,
+				creator: `${creator}`,
+				result: c
+			})
+
+	}).catch(e => {	
+		res.json(loghandler.notfound)
+	})
+
+})
 
 
 router.get('/search/linkgroupwa', async (req, res, next) => {
