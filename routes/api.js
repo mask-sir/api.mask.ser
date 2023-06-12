@@ -739,6 +739,23 @@ textto.sounds.create({ text: text1, voice: lan })
 
 //―――――――――――――――――――――――――――――――――――――――――― ┏  Search  ┓ ―――――――――――――――――――――――――――――――――――――――――― \\
 
+router.get('/search/playstore', async (req, res, next) => {
+	var text1 = req.query.text
+	if (!text1 ) return res.json({ status : false, creator : `${creator}`, message : "[!] Need search word"})   
+const scrape = require('scraper-x0')
+const scraper =  new scrape("nxrj@123456");
+scraper.playstore(text1).then((c)=>{
+			res.json({
+				status: true,
+				creator: `${creator}`,
+				result: c
+			})
+
+	}).catch(e => {	
+		res.json(loghandler.notfound)
+	})
+
+})
 
 
 router.get('/search/linkgroupwa', async (req, res, next) => {
@@ -927,6 +944,20 @@ router.get('/search/sticker', async (req, res, next) => {
 	 res.json(loghandler.error)
 })
 })
+router.post('/javascript-obfuscator', function(req, res) {
+let code = req.body.code
+let value = req.body.value
+try {
+console.log('receiving data ...');
+if (!code) return res.json({status: false, creator: `${creator}`, message: "No Code Given"})
+var JavaScriptObfuscator = require('javascript-obfuscator');
+var obfuscationResult = JavaScriptObfuscator.obfuscate(code,value);
+res.json({status: 200, creator: `${creator}`, code: `${JSON.parse(obfuscationResult.getObfuscatedCode())}`})
+} catch (err) {
+console.log(err)
+res.json({status: 404, creator: `${creator}`, code: 'error in code'})
+}
+})
 
 //―――――――――――――――――――――――――――――――――――――――――― ┏  Random Gambar ┓ ―――――――――――――――――――――――――――――――――――――――――― \\
 
@@ -978,6 +1009,21 @@ router.get('/randomvideo/msts', async (req, res, next) => {
 })
 
 })
+router.get('/fun/tintu', async (req, res, next) => {
+
+	let sts = await fetchJson('https://raw.githubusercontent.com/mask-sir/api.mask-ser/main/Mask/Tintu.json')
+	let random = sts.result[Math.floor(Math.random() * sts.result.length)]
+
+	res.json({
+	status: true,
+	creator: `${creator}`,
+                result: {
+    joke: `${random}`
+          }
+})
+
+})
+
 router.get('/randomvideo/asupan', async (req, res, next) => {
 
 	let sts = await fetchJson('https://raw.githubusercontent.com/mask-sir/api.mask-ser/main/Sts.json')
